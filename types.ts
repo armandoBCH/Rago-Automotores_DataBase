@@ -5,19 +5,8 @@ export type VehicleInsert = Database['public']['Tables']['vehicles']['Insert'];
 export type VehicleUpdate = Database['public']['Tables']['vehicles']['Update'];
 
 // Data type for the vehicle form.
-// It is based on the Insert type from Supabase, omitting `created_at`
-// which is managed by the database. The `Insert` type already defines `id` as optional,
-// which is suitable for both creating and editing vehicles.
-export type VehicleFormData = {
-  id?: number;
-  make: string;
-  model: string;
-  year: number;
-  price: number;
-  mileage: number;
-  engine: string;
-  transmission: 'Automática' | 'Manual';
-  fuelType: string;
-  description: string;
-  images: string[];
-};
+// It is now a direct alias for the VehicleInsert type from Supabase.
+// The `Insert` type already defines `id` as optional,
+// which is suitable for both creating and editing vehicles. `created_at` is also
+// optional and will be handled by the database, so it does not need to be provided by the form.
+export type VehicleFormData = VehicleInsert;
