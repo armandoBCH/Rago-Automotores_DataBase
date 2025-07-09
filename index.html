@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rago Automotores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'rago-black': '#000000',
+            'rago-burgundy': '#6C1E27',
+            'rago-burgundy-darker': '#50161D',
+            'rago-white': '#FFFFFF',
+          }
+        }
+      }
+    }
+    </script>
+    <style>
+        /* Increase base font size for better accessibility */
+        html {
+            font-size: 17px;
+        }
+        body {
+            line-height: 1.6;
+        }
+
+        /* Custom scrollbar for better aesthetics that adapts to light/dark mode */
+        :root {
+            --scrollbar-track: #f1f1f1;
+            --scrollbar-thumb: #6C1E27;
+            --scrollbar-thumb-hover: #50161D;
+            --scrollbar-border: #f1f1f1;
+        }
+        html.dark {
+            --scrollbar-track: #1f2937; /* dark:bg-gray-800 */
+            --scrollbar-thumb: #6C1E27;
+            --scrollbar-thumb-hover: #50161D;
+            --scrollbar-border: #1f2937;
+        }
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--scrollbar-track);
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--scrollbar-thumb);
+            border-radius: 6px;
+            border: 3px solid var(--scrollbar-border);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--scrollbar-thumb-hover);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.50.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gray-100 dark:bg-rago-black text-gray-900 dark:text-gray-100">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
